@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Jihan Sayang 🐾</title>
+    <style>
+        :root {
+            --pink-pastel: #ffdeeb;
+            --cat-orange: #ffb347;
+            --text-color: #5d4037;
+        }
+
+        body {
+            background-color: var(--pink-pastel);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 400px;
+            position: relative;
+            border: 5px solid var(--cat-orange);
+            margin: 20px;
+        }
+
+        .cat-ear {
+            position: absolute;
+            top: -30px;
+            width: 50px;
+            height: 50px;
+            background: var(--cat-orange);
+            border-radius: 10px;
+        }
+
+        .ear-left { left: 40px; transform: rotate(-15deg); }
+        .ear-right { right: 40px; transform: rotate(15deg); }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .cat-img {
+            width: 150px;
+            border-radius: 50%;
+            margin: 20px 0;
+            border: 4px dashed var(--cat-orange);
+            padding: 5px;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .heart {
+            color: #ff4d4d;
+            font-size: 1.5rem;
+            animation: beat 1s infinite alternate;
+        }
+
+        @keyframes beat {
+            to { transform: scale(1.2); }
+        }
+
+        .btn-meow {
+            background: var(--cat-orange);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn-meow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 179, 71, 0.4);
+        }
+
+        .floating-paws {
+            position: fixed;
+            font-size: 2rem;
+            opacity: 0.2;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="cat-ear ear-left"></div>
+        <div class="cat-ear ear-right"></div>
+        
+        <h1>Halo, Jihan! 🐱</h1>
+        <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Jihan" alt="Lucu" class="cat-img">
+        
+        <p>Hanya ingin bilang kalau...</p>
+        <p><strong>Rendi sayang banget sama <br>Jihan Nur Kencana Siwi!</strong></p>
+        
+        <div class="heart">❤️🐾❤️</div>
+        
+        <p style="font-size: 0.9rem; font-style: italic;">"Kamu itu lebih manis dari cappuccino dan lebih menenangkan dari suara purr kucing."</p>
+
+        <button class="btn-meow" onclick="sayMeow()">Klik untuk Surprise!</button>
+    </div>
+
+    <script>
+        function sayMeow() {
+            alert("Meow! 🐾\nJihan, kamu adalah favoritnya Rendi selamanya!");
+        }
+
+        // Tambah jejak kaki kucing di background secara acak
+        for (let i = 0; i < 15; i++) {
+            let paw = document.createElement('div');
+            paw.className = 'floating-paws';
+            paw.innerHTML = '🐾';
+            paw.style.left = Math.random() * 100 + 'vw';
+            paw.style.top = Math.random() * 100 + 'vh';
+            paw.style.transform = `rotate(${Math.random() * 360}deg)`;
+            document.body.appendChild(paw);
+        }
+    </script>
+</body>
+</html>
